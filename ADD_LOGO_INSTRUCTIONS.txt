@@ -1,0 +1,62 @@
+═══════════════════════════════════════════════════════════
+  HOW TO ADD YOUR VROXLAR LOGO
+═══════════════════════════════════════════════════════════
+
+✅ COMPANY NAME UPDATED: All "Vraxlor" and "Teksyniq" → "Vroxlar"
+
+📍 STEP-BY-STEP LOGO INTEGRATION:
+
+1. SAVE YOUR LOGO FILE
+   ┌─────────────────────────────────────────────────────┐
+   │ Copy your logo image to:                            │
+   │                                                      │
+   │ src/assets/images/logo.png                          │
+   │ (or logo.svg if you have SVG format)                │
+   └─────────────────────────────────────────────────────┘
+
+2. OPEN THIS FILE:
+   src/components/common/Header.jsx
+
+3. ADD THIS LINE AT THE TOP (after other imports):
+   import logo from '../../assets/images/logo.png';
+
+4. REPLACE THIS LINE:
+   <Link to="/" className="logo">
+     {COMPANY_INFO.name}
+   </Link>
+
+   WITH THIS:
+   <Link to="/" className="logo">
+     <img src={logo} alt="Vroxlar Logo" className="logo-img" />
+   </Link>
+
+5. ADD TO Header.css:
+   .logo-img {
+     height: 40px;
+     width: auto;
+   }
+
+6. UPDATE FAVICON:
+   Replace public/favicon.ico with your logo icon
+
+7. TEST:
+   npm run dev
+
+═══════════════════════════════════════════════════════════
+
+📁 YOUR LOGO FILE SHOULD BE HERE:
+   /Users/adithyahv/Desktop/Teksyniq Global interfaces/teksyniq-home/src/assets/images/logo.png
+
+🎨 LOGO SPECS:
+   - Format: PNG or SVG (SVG recommended)
+   - Height: ~200px
+   - Transparent background preferred
+   - File size: < 100KB
+
+✅ WHAT'S ALREADY DONE:
+   ✓ All "Vraxlor" → "Vroxlar"
+   ✓ Email updated: info@vroxlar.com
+   ✓ Components renamed
+   ✓ Build successful
+   ✓ Ready for logo!
+

@@ -1,0 +1,116 @@
+╔══════════════════════════════════════════════════════════════╗
+║                                                              ║
+║      🌐 VRAXLOR.COM DNS SETUP - GODADDY CONFIGURATION       ║
+║                                                              ║
+╚══════════════════════════════════════════════════════════════╝
+
+✅ YOUR DOMAIN IS CONNECTED TO VERCEL!
+
+Now you need to update DNS settings in GoDaddy to point to Vercel.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📍 STEP 1: GO TO GODADDY DNS MANAGEMENT
+
+Link: https://dcc.godaddy.com/manage/vraxlor.com/dns
+
+1. Login to your GoDaddy account
+2. Go to "My Products"
+3. Find "vraxlor.com"
+4. Click "DNS" button
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📝 STEP 2: ADD THESE 2 DNS RECORDS
+
+┌────────────────────────────────────────────────────────────┐
+│ RECORD 1: Main Domain (vraxlor.com)                       │
+├────────────────────────────────────────────────────────────┤
+│ Type:    A                                                 │
+│ Name:    @                                                 │
+│ Value:   76.76.21.21                                       │
+│ TTL:     600 (or leave default)                            │
+└────────────────────────────────────────────────────────────┘
+
+┌────────────────────────────────────────────────────────────┐
+│ RECORD 2: WWW Subdomain (www.vraxlor.com)                 │
+├────────────────────────────────────────────────────────────┤
+│ Type:    A                                                 │
+│ Name:    www                                               │
+│ Value:   76.76.21.21                                       │
+│ TTL:     600 (or leave default)                            │
+└────────────────────────────────────────────────────────────┘
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+⏰ STEP 3: WAIT FOR DNS PROPAGATION
+
+Time: 10-30 minutes (sometimes up to 48 hours)
+
+Check status: https://dnschecker.org/#A/vraxlor.com
+(It should show 76.76.21.21 globally)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ STEP 4: TEST YOUR WEBSITE
+
+After DNS propagates, visit:
+👉 https://vraxlor.com
+👉 https://www.vraxlor.com
+
+Both should show your Vraxlor AI website with video background!
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔍 STEP 5: SUBMIT TO GOOGLE SEARCH
+
+1. Go to: https://search.google.com/search-console
+2. Add property: https://vraxlor.com
+3. Verify ownership (HTML file method is easiest)
+4. Submit sitemap: https://vraxlor.com/sitemap.xml
+5. Request indexing for homepage
+
+Google will index your site in 3-7 days!
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📊 WHAT'S ALREADY DONE ✅
+
+✓ Domain added to Vercel (vraxlor.com + www)
+✓ SSL certificates being created (automatic)
+✓ Site deployed with SEO optimization
+✓ Sitemap created (sitemap.xml)
+✓ robots.txt configured
+✓ Meta tags for Google added
+✓ Open Graph tags for social media
+✓ Video background working
+✓ All 6 pages ready
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🎯 QUICK CHECKLIST
+
+□ Login to GoDaddy
+□ Go to DNS management for vraxlor.com
+□ Add A record: @ → 76.76.21.21
+□ Add A record: www → 76.76.21.21
+□ Save changes
+□ Wait 10-30 minutes
+□ Test: https://vraxlor.com
+□ Submit to Google Search Console
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📞 NEED HELP?
+
+Detailed guide: DOMAIN_SETUP_INSTRUCTIONS.md
+Vercel Dashboard: https://vercel.com/adis-projects-db5d10d6/teksyniq-home
+GoDaddy DNS: https://dcc.godaddy.com/manage/dns
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🚀 YOUR SITE WILL BE LIVE AT:
+   https://vraxlor.com
+   (after DNS propagation - 10-30 minutes)
+
+═══════════════════════════════════════════════════════════════

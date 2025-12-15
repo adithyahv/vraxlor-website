@@ -1,0 +1,134 @@
+/* Partners Section - Animated Banner */
+.partners-section {
+    padding: 6rem 0;
+    background: #ffffff;
+    overflow: hidden;
+}
+
+.partners-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 4rem;
+    padding: 0 1.5rem;
+}
+
+.partners-eyebrow {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #8b5cf6;
+    margin-bottom: 1rem;
+}
+
+.partners-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.partners-subtitle {
+    font-size: 1.125rem;
+    color: #666;
+    line-height: 1.6;
+}
+
+.partners-banner {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding: 2rem 0;
+}
+
+.partners-track {
+    display: flex;
+    gap: 3rem;
+    animation: scroll 30s linear infinite;
+    will-change: transform;
+}
+
+.partners-track:hover {
+    animation-play-state: paused;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.partner-logo-card {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80px;
+    padding: 1.5rem 3rem;
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    min-width: 180px;
+}
+
+.partner-logo-card:hover {
+    background: #ffffff;
+    border-color: #8b5cf6;
+    box-shadow: 0 4px 12px rgba(139, 92, 246, 0.15);
+    transform: translateY(-2px);
+}
+
+.partner-logo-img {
+    max-width: 120px;
+    max-height: 50px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    filter: grayscale(1) opacity(0.6);
+    transition: filter 0.3s ease;
+}
+
+.partner-logo-card:hover .partner-logo-img {
+    filter: grayscale(0) opacity(1);
+}
+
+.partner-logo-text {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #111;
+    text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .partners-section {
+        padding: 4rem 0;
+    }
+
+    .partners-title {
+        font-size: 2rem;
+    }
+
+    .partners-track {
+        gap: 2rem;
+        animation-duration: 20s;
+    }
+
+    .partner-logo-card {
+        height: 60px;
+        padding: 1rem 2rem;
+        min-width: 140px;
+    }
+
+    .partner-logo-img {
+        max-width: 90px;
+        max-height: 40px;
+    }
+}

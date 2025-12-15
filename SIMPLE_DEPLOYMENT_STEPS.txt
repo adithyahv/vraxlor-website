@@ -1,0 +1,103 @@
+═══════════════════════════════════════════════════════════
+  📱 HOW TO GET YOUR VROXLAR WEBSITE LIVE ON GOOGLE
+═══════════════════════════════════════════════════════════
+
+🎯 SIMPLE 5-STEP PROCESS:
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STEP 1: BUILD YOUR WEBSITE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Open Terminal and run:
+
+cd "/Users/adithyahv/Desktop/Teksyniq Global interfaces/teksyniq-home"
+npm run build
+
+✅ This creates a "dist" folder with your website files.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STEP 2: DEPLOY TO VERCEL (EASIEST & FREE)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Run these commands:
+
+npm install -g vercel
+vercel login
+vercel --prod
+
+When asked:
+- Directory? Type: ./dist
+- Link to project? Choose: No
+
+✅ You'll get a URL like: https://vroxlar.vercel.app
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STEP 3: CONNECT YOUR DOMAIN
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. Go to: https://vercel.com/dashboard
+2. Click your project → Settings → Domains
+3. Add your domain (e.g., vroxlar.com)
+4. Vercel shows you DNS settings
+5. Go to your domain provider (GoDaddy, Namecheap, etc.)
+6. Update DNS records with Vercel's settings
+7. Wait 24-48 hours
+
+✅ Your site will be at https://vroxlar.com
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STEP 4: SUBMIT TO GOOGLE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. Go to: https://search.google.com/search-console
+2. Add your website: https://vroxlar.com
+3. Verify ownership (follow Google's steps)
+4. Submit sitemap: https://vroxlar.com/sitemap.xml
+5. Request indexing for your homepage
+
+✅ Google will start showing your site in 3-7 days!
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STEP 5: ADD GOOGLE ANALYTICS (OPTIONAL)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. Go to: https://analytics.google.com
+2. Create account & get tracking ID
+3. Add tracking code to your index.html
+
+✅ Track visitor data!
+
+═══════════════════════════════════════════════════════════
+
+⚡ EVEN FASTER - USE THE DEPLOY SCRIPT:
+
+./QUICK_DEPLOY.sh
+
+This script will:
+✅ Build your site
+✅ Let you choose deployment platform
+✅ Deploy automatically
+
+═══════════════════════════════════════════════════════════
+
+💰 COSTS:
+
+✅ Hosting: FREE (Vercel/Netlify/Firebase)
+💵 Domain: $10-15/year (only cost)
+
+═══════════════════════════════════════════════════════════
+
+⏰ TIMELINE:
+
+✅ Deploy: 10 minutes
+✅ Domain connection: 24-48 hours (DNS)
+✅ Google indexing: 3-7 days
+✅ Search ranking: 2-4 weeks
+
+═══════════════════════════════════════════════════════════
+
+📚 MORE DETAILS:
+
+See DEPLOYMENT_GUIDE.md for complete instructions
+
+═══════════════════════════════════════════════════════════

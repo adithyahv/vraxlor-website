@@ -1,0 +1,207 @@
+.founder-quote-section {
+  background: #ffffff;
+  padding: 6rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle grid pattern overlay */
+.founder-quote-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image:
+    linear-gradient(rgba(30, 144, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(30, 144, 255, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.founder-quote-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* Two Column Layout */
+.founder-quote-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.quote-content {
+  text-align: left;
+  padding-right: 2rem;
+}
+
+.quote-text {
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  line-height: 1.6;
+  font-weight: 400;
+  margin-bottom: 1.2rem;
+  letter-spacing: -0.01em;
+}
+
+.quote-mark {
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 700;
+  color: rgba(30, 144, 255, 0.4);
+  line-height: 1;
+  vertical-align: top;
+}
+
+.text-white {
+  color: var(--text);
+  font-weight: 400;
+}
+
+.text-cyan {
+  color: #1e90ff;
+  font-weight: 500;
+  position: relative;
+  display: inline-block;
+}
+
+/* Subtle glow effect on cyan text */
+.text-cyan::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #1e90ff;
+  filter: blur(8px);
+  opacity: 0.4;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.founder-attribution {
+  text-align: left;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(30, 144, 255, 0.2);
+  margin-top: 1.5rem;
+}
+
+.founder-name {
+  font-size: 1.1rem;
+  color: var(--muted-text);
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  font-style: italic;
+}
+
+/* Video Container - Right Side */
+.video-container {
+  position: relative;
+  width: 100%;
+}
+
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  /* 16:9 Aspect Ratio */
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow:
+    0 20px 60px rgba(30, 144, 255, 0.15),
+    0 0 0 1px rgba(30, 144, 255, 0.2);
+  background: #000;
+}
+
+.youtube-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .founder-quote-layout {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .quote-content {
+    padding-right: 0;
+    text-align: center;
+  }
+
+  .founder-attribution {
+    text-align: center;
+  }
+
+  .video-container {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .founder-quote-section {
+    padding: 4rem 0;
+  }
+
+  .founder-quote-layout {
+    gap: 2rem;
+  }
+
+  .quote-text {
+    font-size: clamp(0.95rem, 4vw, 1.2rem);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+
+  .quote-mark {
+    font-size: clamp(1.5rem, 5vw, 2rem);
+  }
+
+  .founder-name {
+    font-size: 0.95rem;
+  }
+
+  .founder-quote-container {
+    padding: 0 1.5rem;
+  }
+
+  .video-wrapper {
+    border-radius: 8px;
+  }
+}
+
+/* Animation on scroll (optional - can be enhanced with intersection observer) */
+.founder-quote-section {
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+
+  .founder-quote-section,
+  .text-cyan::after {
+    animation: none;
+  }
+}

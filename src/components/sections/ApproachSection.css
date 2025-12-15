@@ -1,0 +1,208 @@
+.approach-section {
+    padding: 8rem 2rem;
+    background-color: #ffffff;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+    color: var(--text);
+    position: relative;
+    overflow: hidden;
+}
+
+.approach-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.approach-header {
+    text-align: center;
+    margin-bottom: 6rem;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.approach-header.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.approach-eyebrow {
+    display: inline-block;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #8b5cf6;
+    margin-bottom: 1rem;
+    padding: 0.5rem 1rem;
+    background: rgba(139, 92, 246, 0.1);
+    border-radius: 100px;
+    border: 1px solid rgba(139, 92, 246, 0.2);
+}
+
+.approach-header h2 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(135deg, #111111 0%, #4b5563 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: -0.02em;
+}
+
+.approach-header p {
+    font-size: 1.25rem;
+    color: var(--muted-text);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Grid Layout for Blocks */
+.approach-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    position: relative;
+    perspective: 1000px;
+    /* Adds depth for 3D effects if needed */
+}
+
+/* Dropping Block Animation */
+@keyframes dropIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-100px) scale(0.9);
+    }
+
+    60% {
+        opacity: 1;
+        transform: translateY(10px) scale(1.02);
+    }
+
+    80% {
+        transform: translateY(-5px) scale(0.98);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.approach-card {
+    background: #ffffff;
+    /* Solid dark background for "block" feel */
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 1rem;
+    padding: 3rem;
+    position: relative;
+    opacity: 0;
+    /* Hidden initially */
+    /* No transition here, animation is handled by keyframes class */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+}
+
+.approach-card.dropping {
+    animation: dropIn 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.approach-card:hover {
+    border-color: rgba(139, 92, 246, 0.5);
+    background: #f9fafb;
+    transform: translateY(-2px);
+    transition: all 0.3s ease;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Phase Number/Label */
+.card-phase {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--muted-text);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.card-phase::before {
+    content: '';
+    display: block;
+    width: 8px;
+    height: 8px;
+    background-color: #8b5cf6;
+    border-radius: 50%;
+}
+
+/* Icon Styling */
+.card-icon-wrapper {
+    width: 4rem;
+    height: 4rem;
+    background: rgba(139, 92, 246, 0.1);
+    border-radius: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+    color: #a78bfa;
+    font-size: 1.75rem;
+    transition: transform 0.3s ease;
+}
+
+.approach-card:hover .card-icon-wrapper {
+    transform: scale(1.1);
+    background: rgba(139, 92, 246, 0.2);
+    color: #fff;
+}
+
+.approach-card h3 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--text);
+    line-height: 1.2;
+}
+
+.approach-card p {
+    font-size: 1.1rem;
+    color: var(--muted-text);
+    line-height: 1.7;
+}
+
+/* Background Elements */
+.approach-bg-glow {
+    position: absolute;
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(circle, rgba(139, 92, 246, 0.08) 0%, rgba(0, 0, 0, 0) 70%);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+@media (max-width: 768px) {
+    .approach-header h2 {
+        font-size: 2.5rem;
+    }
+
+    .approach-section {
+        padding: 5rem 1.5rem;
+    }
+
+    .approach-grid {
+        grid-template-columns: 1fr;
+    }
+}

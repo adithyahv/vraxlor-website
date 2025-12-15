@@ -1,0 +1,241 @@
+/* Approach Section - Clean White Theme */
+.approach-section {
+    padding: 100px 0;
+    background: #ffffff;
+    position: relative;
+    overflow: hidden;
+}
+
+.approach-header {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto 80px;
+}
+
+.approach-header .section-title {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 800;
+    color: #111;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+}
+
+.text-highlight {
+    color: #00A389;
+    /* Electric Teal */
+}
+
+.approach-header .section-intro {
+    font-size: 1.2rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Timeline Wrapper */
+.timeline-wrapper {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding-left: 60px;
+    /* Space for the line */
+}
+
+/* Vertical Line */
+.timeline-line-container {
+    position: absolute;
+    top: 40px;
+    /* Start below the first marker's top */
+    bottom: 40px;
+    /* End above the last marker's bottom */
+    left: 24px;
+    /* Center of the 48px marker area */
+    width: 2px;
+    z-index: 1;
+}
+
+.timeline-line-track {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #e5e7eb;
+    /* Light Grey */
+}
+
+.timeline-line-progress {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    background: #00A389;
+    /* Electric Teal */
+    transition: height 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Step Item */
+.approach-step {
+    position: relative;
+    margin-bottom: 80px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.approach-step:last-child {
+    margin-bottom: 0;
+}
+
+.approach-step.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Marker */
+.step-marker {
+    position: absolute;
+    left: -60px;
+    top: 0;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+}
+
+.marker-circle {
+    width: 40px;
+    height: 40px;
+    background: #ffffff;
+    border: 2px solid #e5e7eb;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s ease;
+}
+
+.marker-number {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #999;
+}
+
+/* Active State for Marker */
+.approach-step.is-active .marker-circle {
+    border-color: #00A389;
+    background: #00A389;
+    transform: scale(1.1);
+    box-shadow: 0 0 0 6px rgba(0, 163, 137, 0.1);
+}
+
+.approach-step.is-active .marker-number {
+    color: #ffffff;
+}
+
+/* Content */
+.step-content {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 16px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.approach-step:hover .step-content {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    border-color: rgba(0, 163, 137, 0.2);
+}
+
+/* Step Image */
+.step-image {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.step-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.approach-step:hover .step-image {
+    transform: scale(1.05);
+    box-shadow: 0 6px 16px rgba(0, 163, 137, 0.2);
+}
+
+.step-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 0.75rem;
+    padding-right: 100px;
+    /* Make room for the image */
+}
+
+.step-summary {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #00A389;
+    margin-bottom: 1rem;
+}
+
+.step-description {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.7;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .timeline-wrapper {
+        padding-left: 40px;
+    }
+
+    .timeline-line-container {
+        left: 14px;
+    }
+
+    .step-marker {
+        left: -40px;
+        width: 30px;
+    }
+
+    .marker-circle {
+        width: 30px;
+        height: 30px;
+    }
+
+    .marker-number {
+        font-size: 0.75rem;
+    }
+
+    .step-title {
+        font-size: 1.5rem;
+        padding-right: 70px;
+        /* Adjust for smaller image */
+    }
+
+    .step-image {
+        width: 60px;
+        height: 60px;
+        top: 1.5rem;
+        right: 1.5rem;
+    }
+
+    .step-content {
+        padding: 1.5rem;
+    }
+}

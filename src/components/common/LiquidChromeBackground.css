@@ -1,0 +1,155 @@
+.liquid-chrome-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.liquid-chrome-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.chrome-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 20% 50%, rgba(100, 200, 255, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(150, 150, 255, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 40% 20%, rgba(200, 150, 255, 0.08) 0%, transparent 50%);
+  animation: chromeShift 15s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.chrome-gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(100, 150, 255, 0.05) 0%,
+    rgba(150, 100, 255, 0.03) 25%,
+    rgba(50, 150, 200, 0.05) 50%,
+    rgba(100, 200, 255, 0.03) 75%,
+    rgba(150, 150, 255, 0.05) 100%
+  );
+  animation: gradientFlow 20s ease infinite;
+  pointer-events: none;
+}
+
+@keyframes chromeShift {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+  25% {
+    opacity: 0.8;
+    transform: scale(1.05) rotate(1deg);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(0.98) rotate(-1deg);
+  }
+  75% {
+    opacity: 0.85;
+    transform: scale(1.02) rotate(0.5deg);
+  }
+}
+
+@keyframes gradientFlow {
+  0%, 100% {
+    background-position: 0% 50%;
+    opacity: 1;
+  }
+  50% {
+    background-position: 100% 50%;
+    opacity: 0.8;
+  }
+}
+
+/* Metallic shine effect */
+.liquid-chrome-background::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.03) 50%,
+    transparent 70%
+  );
+  animation: shine 8s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes shine {
+  0% {
+    transform: translateX(-100%) translateY(-100%) rotate(45deg);
+  }
+  100% {
+    transform: translateX(100%) translateY(100%) rotate(45deg);
+  }
+}
+
+/* Noise texture for added depth */
+.liquid-chrome-background::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    repeating-linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.01) 0px,
+      transparent 1px,
+      transparent 2px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.01) 0px,
+      transparent 1px,
+      transparent 2px
+    );
+  opacity: 0.3;
+  animation: noiseMove 10s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes noiseMove {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(50px, 50px);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .chrome-overlay {
+    animation-duration: 20s;
+  }
+  
+  .chrome-gradient {
+    animation-duration: 25s;
+  }
+}
+
+
