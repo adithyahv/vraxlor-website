@@ -19,7 +19,6 @@ const Header = () => {
     <nav className="navbar">
       <Link to="/" className="logo">
         <img src={logoImage} alt="Vraxlor" className="logo-image" />
-        <span className="logo-text">Vraxlor</span>
       </Link>
 
       {/* Desktop Navigation */}
