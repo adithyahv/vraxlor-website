@@ -1,0 +1,97 @@
+/* Mega Menu Container */
+.mega-menu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    background: #ffffff;
+    width: 90vw;
+    max-width: 1200px;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    padding: 40px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 1000;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* Show on Hover (handled by parent class in Header.css usually, or simplified here) */
+.nav-item-dropdown:hover .mega-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+.mega-menu-content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+}
+
+.mega-menu-column {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Phase Header */
+.phase-header {
+    margin-bottom: 24px;
+    border-bottom: 2px solid #f3f4f6;
+    padding-bottom: 12px;
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+}
+
+.phase-number {
+    font-size: 0.875rem;
+    color: #94a3b8;
+    font-family: 'Monaco', 'Consolas', monospace;
+}
+
+.phase-name {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #111827;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* Service List */
+.service-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.service-link {
+    font-size: 0.95rem;
+    color: #4b5563;
+    text-decoration: none;
+    transition: color 0.2s;
+    display: block;
+    padding: 4px 0;
+}
+
+.service-link:hover {
+    color: #2563eb;
+    font-weight: 500;
+}
+
+/* Dark Mode Adaptation (if needed) */
+@media (prefers-color-scheme: dark) {
+    /* Only apply if the app supports dark mode at root, but for now enforcing white menu for clarity or matching theme */
+}
+
+/* Mobile responsive - typically hide mega menu or style differently */
+@media (max-width: 1024px) {
+    .mega-menu {
+        display: none;
+        /* Mobile menu handles this */
+    }
+}

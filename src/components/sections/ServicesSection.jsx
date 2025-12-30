@@ -1,11 +1,14 @@
+import { useState } from 'react';
 import './ServicesSection.css';
-import aiStrategyImg from '../../assets/services/service_ai_strategy_1763799480061.png';
-import customAiImg from '../../assets/services/service_custom_ai_1763799503258.png';
-import aiAgentsImg from '../../assets/services/service_ai_agents_1763799521040.png';
-import mlopsImg from '../../assets/services/service_mlops_1763799540119.png';
-import dataMigrationImg from '../../assets/services/service_data_migration_1763799567412.png';
-import webDevImg from '../../assets/services/service_web_dev_1763799590110.png';
-import mobileDevImg from '../../assets/services/service_mobile_dev_1763799610022.png';
+import aiStrategyImg from '../../assets/services/service_ai_strategy_office.jpg';
+import customAiImg from '../../assets/services/service_custom_ai_office.jpg';
+import aiAgentsImg from '../../assets/services/service_ai_agents_office.jpg';
+import mlopsImg from '../../assets/services/service_mlops_office.jpg';
+import dataMigrationImg from '../../assets/services/service_data_migration_office.jpg';
+import webDevImg from '../../assets/services/service_web_dev_office.jpg';
+import mobileDevImg from '../../assets/services/service_mobile_dev_office.jpg';
+import cognitiveSystemsImg from '../../assets/services/service_cognitive_systems_office.jpg';
+import googleAdsImg from '../../assets/services/service_google_ads_office.jpg';
 
 
 const SERVICES = [
@@ -96,7 +99,7 @@ const SERVICES = [
   {
     id: 'cognitive-systems',
     title: 'Cognitive Vision, NLP & Speech Systems',
-    image: aiAgentsImg,
+    image: cognitiveSystemsImg,
     oneLiner: 'AI that understands images, language, documents, and environments — powering intelligent decisions.',
     includes: [
       'NLP & chat systems',
@@ -108,7 +111,7 @@ const SERVICES = [
   {
     id: 'google-ads-marketing',
     title: 'Google Ads & Digital Marketing',
-    image: customAiImg,
+    image: googleAdsImg,
     oneLiner: 'Strategic paid advertising and SEO that drives qualified traffic, conversions, and measurable ROI across all channels.',
     includes: [
       'Google Ads campaign setup & optimization',
@@ -121,6 +124,8 @@ const SERVICES = [
 ];
 
 const ServicesSection = () => {
+  const [openServiceId, setOpenServiceId] = useState(null);
+
   return (
     <section className="services-section" id="services">
       <div className="services-container">
@@ -136,26 +141,40 @@ const ServicesSection = () => {
         </div>
 
         <div className="services-grid">
-          {SERVICES.map((service) => (
-            <div key={service.id} className="service-card">
-              <div className="service-bg" style={{ backgroundImage: `url(${service.image})` }}></div>
-              <div className="service-content-wrapper">
-                <h3 className="service-title">{service.title}</h3>
-                <p className="service-oneliner">{service.oneLiner}</p>
-                <div className="service-includes">
-                  <p className="includes-label">Includes:</p>
-                  <ul className="includes-list">
-                    {service.includes.map((item, idx) => (
-                      <li key={idx}>{item}</li>
-                    ))}
-                  </ul>
+          {SERVICES.map((service) => {
+            const isOpen = openServiceId === service.id;
+
+            return (
+              <div key={service.id} className="service-card">
+                <div className="service-bg" style={{ backgroundImage: `url(${service.image})` }}></div>
+                <div className="service-content-wrapper">
+                  <h3 className="service-title">{service.title}</h3>
+                  <p className="service-oneliner">{service.oneLiner}</p>
+                  <div
+                    className={`service-includes ${isOpen ? 'is-open' : ''}`}
+                    id={`service-dropdown-${service.id}`}
+                    aria-hidden={!isOpen}
+                  >
+                    <p className="includes-label">Includes:</p>
+                    <ul className="includes-list">
+                      {service.includes.map((item, idx) => (
+                        <li key={idx}>{item}</li>
+                      ))}
+                    </ul>
+                  </div>
+                  <button
+                    type="button"
+                    className="service-card-cta"
+                    aria-expanded={isOpen}
+                    aria-controls={`service-dropdown-${service.id}`}
+                    onClick={() => setOpenServiceId(isOpen ? null : service.id)}
+                  >
+                    Learn More →
+                  </button>
                 </div>
-                <a href={`/services#${service.id}`} className="service-cta">
-                  Learn More →
-                </a>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

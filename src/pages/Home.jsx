@@ -8,7 +8,6 @@ import ApproachTimeline from '../components/sections/ApproachTimeline';
 import PartnersSection from '../components/sections/PartnersSection';
 import IndustriesSection from '../components/sections/IndustriesSection';
 import WhyVroxlarSection from '../components/sections/WhyVroxlarSection';
-import CTASection from '../components/sections/CTASection';
 import './Home.css';
 import GridMotion from '../components/common/GridMotion';
 
@@ -25,7 +24,7 @@ const Home = () => {
           background: '#ffffff',
           position: 'relative',
           overflow: 'hidden',
-          minHeight: '150vh'
+          minHeight: '108vh'
         }}
       >
         <GridMotion />
@@ -68,7 +67,6 @@ const Home = () => {
         <PartnersSection />
         <StatsSection />
         <WhyVroxlarSection />
-        <CTASection />
       </main>
     </div>
   );

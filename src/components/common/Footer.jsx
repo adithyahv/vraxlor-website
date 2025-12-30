@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { FOOTER_LINKS, COMPANY_INFO } from '../../constants/data';
+import logoImage from '../../assets/images/logo.png';
 import './Footer.css';
 
 const Footer = () => {
@@ -9,7 +10,10 @@ const Footer = () => {
     <footer className="footer" id="footer">
       <div className="footer-content container">
         <div className="footer-brand">
-          <div className="logo">{COMPANY_INFO.name}</div>
+          <div className="logo">
+            <img src={logoImage} alt="Vraxlor" className="footer-logo-image" />
+            <span>{COMPANY_INFO.name}</span>
+          </div>
           <p>{COMPANY_INFO.tagline}</p>
           <a href={`mailto:${COMPANY_INFO.email}`}>{COMPANY_INFO.email}</a>
           <a href={`tel:${COMPANY_INFO.phone}`}>{COMPANY_INFO.phone}</a>

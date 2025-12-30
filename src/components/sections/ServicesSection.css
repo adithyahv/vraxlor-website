@@ -148,10 +148,10 @@
   inset: 0;
   background-size: cover;
   background-position: center;
-  opacity: 0.85;
+  opacity: 1;
   transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 0;
-  filter: grayscale(10%) contrast(1.1);
+  filter: brightness(1.05) saturate(1.05);
 }
 
 .service-bg::after {
@@ -159,8 +159,8 @@
   position: absolute;
   inset: 0;
   background: linear-gradient(180deg,
-      rgba(255, 255, 255, 0.8) 0%,
-      rgba(255, 255, 255, 0.95) 100%);
+      rgba(255, 255, 255, 0.2) 0%,
+      rgba(255, 255, 255, 0.55) 100%);
   z-index: 1;
 }
 
@@ -226,9 +226,9 @@
 }
 
 .service-card:hover .service-bg {
-  opacity: 0.85;
+  opacity: 0.95;
   transform: scale(1.1);
-  filter: grayscale(0%) contrast(1.15);
+  filter: brightness(1.08) saturate(1.1);
 }
 
 .service-card:hover::before {
@@ -271,8 +271,19 @@
 
 /* Service Includes */
 .service-includes {
+  margin-bottom: 0;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  pointer-events: none;
+  transition: max-height 0.35s ease, opacity 0.35s ease, margin-bottom 0.35s ease;
+}
+
+.service-includes.is-open {
+  max-height: 320px;
+  opacity: 1;
   margin-bottom: 2rem;
-  flex-grow: 1;
+  pointer-events: auto;
 }
 
 .includes-label {
@@ -321,42 +332,33 @@
 }
 
 /* Service CTA */
-.service-cta {
+.service-card-cta {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
   font-size: 1rem;
   font-weight: 600;
-  color: #00bfff;
+  color: var(--text);
   text-decoration: none;
   padding: 0.75rem 0;
-  border-top: 1px solid rgba(30, 144, 255, 0.4);
+  border-top: 1px solid rgba(15, 23, 42, 0.12);
   margin-top: auto;
   transition: all 0.3s ease;
   position: relative;
+  background: transparent;
+  border: none;
+  cursor: pointer;
 }
 
-.service-cta::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: linear-gradient(90deg, #1e90ff, #00bfff);
-  transition: width 0.4s ease;
-  box-shadow: 0 0 10px rgba(30, 144, 255, 0.6);
+.service-card-cta::after {
+  content: none;
 }
 
-.service-cta:hover {
-  color: #87ceeb;
-  gap: 0.75rem;
-  padding-left: 0.5rem;
-  text-shadow: 0 0 12px rgba(30, 144, 255, 0.6);
-}
-
-.service-cta:hover::after {
-  width: 100%;
+.service-card-cta:hover {
+  color: var(--text);
+  gap: 0.5rem;
+  padding-left: 0;
+  text-shadow: none;
 }
 
 /* Responsive - Tablet */

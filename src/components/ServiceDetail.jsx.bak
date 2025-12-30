@@ -1,0 +1,160 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+import * as Icons from 'lucide-react';
+import './ServiceDetail.css';
+
+const DynamicIcon = ({ name }) => {
+    const IconComponent = Icons[name];
+    return IconComponent ? <IconComponent size={24} /> : <Icons.Check size={24} />;
+};
+
+const ServiceDetail = ({ service }) => {
+    if (!service) return <div className="loading">Loading...</div>;
+
+    return (
+        <div className="service-detail-page">
+            {/* Hero Section */}
+            {service.id === 'ai-consulting' ? (
+                <section className="sd-hero sd-hero-light-grey">
+                    <div className="container sd-hero-container-simple">
+                        <div className="sd-hero-content-simple">
+                            <h4 className="sd-hero-eyebrow">{service.title}</h4>
+                            <h1 className="sd-hero-title-simple">{service.heroTitle || service.title}</h1>
+                            <p className="sd-hero-subtitle-simple">{service.heroSubtitle || service.description}</p>
+                            <Link to="/contact" className="primary-btn sd-cta-btn-green">Estimate your project</Link>
+                        </div>
+                    </div>
+                </section>
+            ) : (
+                <section className="sd-hero">
+                    <div className="container sd-hero-container">
+                        <div className="sd-hero-content">
+                            <Link to="/services" className="back-link">← Back to Services</Link>
+                            <h1 className="sd-hero-title">{service.heroTitle || service.title}</h1>
+                            <p className="sd-hero-subtitle">{service.heroSubtitle || service.description}</p>
+                            <Link to="/contact" className="primary-btn sd-cta-btn">Let's Talk</Link>
+                        </div>
+                        <div className="sd-hero-image-placeholder">
+                            <span>Live place for image</span>
+                        </div>
+                    </div>
+                </section>
+            )}
+
+            {/* AI Consulting Specific: 'What consulting services can you expect?' (Benefits) */}
+            {service.id === 'ai-consulting' && service.whyInvest && (
+                <section className="sd-section sd-consulting-services">
+                    <div className="container">
+                        <div className="consulting-split">
+                            <div className="consulting-text">
+                                <h2 className="sd-section-title-left">Artificial Intelligence – consulting in the field of AI solutions</h2>
+                                <ul className="consulting-links">
+                                    <li><a href="#services" className="active">AI Consulting Services</a></li>
+                                    <li><a href="#strategy">AI Strategy Consulting</a></li>
+                                    <li><a href="#tech">AI Technologies Consulting</a></li>
+                                </ul>
+                            </div>
+                            <div className="consulting-content">
+                                <h3>What AI consulting services can you expect?</h3>
+                                <p className="consulting-intro">Addepto offers unique <strong>AI consulting services that will help you realize how many opportunities come from implementing AI solutions into your business.</strong></p>
+                                <div className="consulting-list">
+                                    {service.whyInvest.map((item, index) => (
+                                        <div key={index} className="consulting-item">
+                                            <Icons.Check className="consulting-icon" />
+                                            <span>{item.title}</span>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            )}
+
+            {/* Standard Benefits Grid (for other services) */}
+            {service.id !== 'ai-consulting' && service.whyInvest && (
+                <section className="sd-section sd-why-invest">
+                    <div className="container">
+                        <h2 className="sd-section-title">Why do you need {service.title}?</h2>
+                        <div className="why-invest-grid">
+                            {service.whyInvest.map((item, index) => (
+                                <div key={index} className="why-invest-card">
+                                    <div className="wi-icon">
+                                        <DynamicIcon name={item.icon} />
+                                    </div>
+                                    <h3 className="wi-title">{item.title}</h3>
+                                    <p className="wi-desc">{item.description}</p>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </section>
+            )}
+
+            {/* Types/Capabilities Section (New) */}
+            {service.types && (
+                <section className="sd-section sd-types">
+                    <div className="container">
+                        <h2 className="sd-section-title">Types of {service.title}</h2>
+                        <div className="types-grid">
+                            {service.types.map((type, index) => (
+                                <div key={index} className="type-card">
+                                    <h3 className="type-title">{type.title}</h3>
+                                    <p className="type-desc">{type.description}</p>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </section>
+            )}
+
+            {/* Process Section */}
+            {service.process && (
+                <section className={`sd-section sd-process ${service.processSectionClass || ''}`}>
+                    <div className="container">
+                        <h2 className="sd-section-title">{service.title === 'AI Consulting' ? 'AI as a Service' : 'Implementation Process'}</h2>
+                        <div className="process-timeline">
+                            {service.process.map((step, index) => (
+                                <div key={index} className="process-step">
+                                    <div className="process-marker">{index + 1}</div>
+                                    <div className="process-content">
+                                        <h3 className="process-step-title">{step.title}</h3>
+                                        <p className="process-step-desc">{step.description}</p>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </section>
+            )}
+
+            {/* Expertise/Capabilities Section */}
+            {service.expertise && (
+                <section className="sd-section sd-expertise">
+                    <div className="container">
+                        <h2 className="sd-section-title">Our Capabilities</h2>
+                        <div className="expertise-grid">
+                            {service.expertise.map((item, index) => (
+                                <div key={index} className="expertise-card">
+                                    <Icons.CheckCircle2 className="expertise-icon" size={20} />
+                                    <span className="expertise-text">{item}</span>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </section>
+            )}
+
+            {/* Bottom CTA */}
+            <section className="sd-bottom-cta">
+                <div className="container">
+                    <h2>Ready to start your project?</h2>
+                    <Link to="/contact" className="primary-btn">Contact Us</Link>
+                </div>
+            </section>
+
+        </div>
+    );
+};
+
+export default ServiceDetail;

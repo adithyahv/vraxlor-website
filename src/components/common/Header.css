@@ -39,35 +39,56 @@
   align-items: center;
   gap: 0.75rem;
   text-decoration: none;
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  transition: transform 0.3s ease;
+  position: relative;
+  z-index: 102;
+  /* Ensure logo is above mobile menu (99) and hamburger (101) */
 }
 
 .logo:hover {
   transform: translateY(-2px);
-  opacity: 0.9;
 }
 
 .logo-image {
-  height: 50px;
-  width: auto;
+  height: 44px;
+  width: 44px;
   object-fit: contain;
+  background: #ffffff;
+  border-radius: 50%;
+  padding: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.logo:hover .logo-image {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  transform: scale(1.05);
 }
 
 .logo-text {
   font-size: 1.5rem;
   font-weight: 700;
-  letter-spacing: 0.08em;
-  color: #2d3748;
-  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: #1a202c;
+  transition: all 0.3s ease;
+  position: relative;
 }
 
+.logo:hover .logo-text {
+  color: #2d3748;
+  letter-spacing: 0.04em;
+}
+
+
+/* Nav Links & Dropdown */
 .nav-links {
   display: flex;
   gap: 2rem;
   font-weight: 500;
+  align-items: center;
 }
 
-.nav-links a {
+.nav-link-item {
   color: #1a1a1a;
   text-decoration: none;
   position: relative;
@@ -76,15 +97,215 @@
   font-size: 0.85rem;
   font-weight: 600;
   letter-spacing: 0.02em;
+  cursor: pointer;
 }
 
-.nav-links a:hover {
+.nav-link-item:hover {
   color: #8b5cf6;
 }
 
-.nav-links a::after {
-  display: none;
+/* Dropdown Wrapper - Remove hover behavior */
+.nav-item-dropdown {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
 }
+
+/* Services Toggle Button */
+.services-toggle {
+  background: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.chevron {
+  font-size: 0.7rem;
+  transition: transform 0.3s ease;
+}
+
+.chevron.open {
+  transform: rotate(180deg);
+}
+
+/* Full-Page Services Overlay */
+.services-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #ffffff;
+  z-index: 200;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-20px);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow-y: auto;
+  padding: 2rem;
+}
+
+.services-overlay.open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.services-overlay-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid #e2e8f0;
+  margin-bottom: 3rem;
+}
+
+.services-header-brand {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.services-logo {
+  height: 36px;
+  width: 36px;
+  object-fit: contain;
+  background: #f8fafc;
+  border-radius: 50%;
+  padding: 6px;
+}
+
+.services-overlay-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.services-close-btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #64748b;
+  padding: 0.5rem;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.services-close-btn:hover {
+  background: #f1f5f9;
+  color: #1e293b;
+}
+
+.services-overlay-content {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.services-column {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.services-phase-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #8b5cf6;
+}
+
+.services-phase-number {
+  font-size: 0.875rem;
+  color: #8b5cf6;
+  font-weight: 700;
+}
+
+.services-phase-name {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.services-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.services-item-link {
+  font-size: 1rem;
+  color: #475569;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  display: block;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  line-height: 1.4;
+}
+
+.services-item-link:hover {
+  color: #8b5cf6;
+  background: #f8fafc;
+  transform: translateX(4px);
+}
+
+/* Backdrop */
+.services-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 199;
+}
+
+/* Mobile Services Toggle */
+.mobile-services-toggle {
+  background: none;
+  border: none;
+  color: #1a1a1a;
+  font-size: 1.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.mobile-services-toggle:hover {
+  color: #8b5cf6;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .services-overlay-content {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .services-overlay-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .services-overlay-header {
+    padding: 1rem;
+  }
+
+  .services-overlay {
+    padding: 1rem;
+  }
+}
+
 
 .primary-btn {
   background: linear-gradient(135deg, #8b5cf6 0%, #a78bfa 100%);

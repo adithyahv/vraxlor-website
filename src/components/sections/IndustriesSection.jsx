@@ -10,14 +10,14 @@ const IndustriesSection = () => {
     target: targetRef,
   });
 
-  const x = useTransform(scrollYProgress, [0, 1], ['1%', '-95%']);
+  const x = useTransform(scrollYProgress, [0, 1], ['0%', '-100%']);
 
   return (
     <section ref={targetRef} className="industries-scroll-section" id="industries" style={{ backgroundColor: '#EBE9E4' }}>
       <div className="industries-sticky-container">
         <div className="industries-header-horizontal">
           <span className="industries-eyebrow">Sectors</span>
-          <h2 className="industries-title">Industries We Serve</h2>
+          <h2 className="industries-title">Industries We <span className="highlight-serve">Serve</span></h2>
           <p className="industries-intro">
             AI solutions tuned to the realities of each market.
           </p>
