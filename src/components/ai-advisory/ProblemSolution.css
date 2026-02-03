@@ -1,0 +1,139 @@
+/* Problem Solution Styles */
+
+.problem-solution {
+    width: 100%;
+}
+
+/* Problem Section */
+.ps-problem {
+    margin-bottom: 4rem;
+}
+
+.ps-problem-header h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #0f1115;
+    margin-bottom: 1.5rem;
+}
+
+.ps-problem-content {
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    padding: 2rem;
+}
+
+.ps-problem-content p {
+    font-size: 1.05rem;
+    color: #374151;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+}
+
+.ps-problem-content p:last-child {
+    margin-bottom: 0;
+}
+
+.ps-problem-list {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+    background: #fef2f2;
+    border-radius: 12px;
+    padding: 1.5rem;
+}
+
+.ps-problem-list li {
+    position: relative;
+    padding-left: 1.75rem;
+    margin-bottom: 0.75rem;
+    color: #991b1b;
+    font-size: 0.95rem;
+}
+
+.ps-problem-list li:last-child {
+    margin-bottom: 0;
+}
+
+.ps-problem-list li::before {
+    content: '✗';
+    position: absolute;
+    left: 0;
+    color: #dc2626;
+    font-weight: 700;
+}
+
+/* Benefits Section */
+.ps-benefits {
+    margin-top: 3rem;
+}
+
+.ps-benefits-header {
+    margin-bottom: 2rem;
+}
+
+.ps-benefits-header h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #0f1115;
+    margin-bottom: 0.75rem;
+}
+
+.ps-benefits-header p {
+    font-size: 1.1rem;
+    color: #6b7280;
+}
+
+.ps-benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.ps-benefit-card {
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    padding: 2rem;
+    transition: all 0.2s ease;
+}
+
+.ps-benefit-card:hover {
+    border-color: #37c95d;
+    box-shadow: 0 8px 24px rgba(55, 201, 93, 0.1);
+    transform: translateY(-4px);
+}
+
+.ps-benefit-icon {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.ps-benefit-card h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #0f1115;
+    margin-bottom: 0.75rem;
+}
+
+.ps-benefit-card p {
+    font-size: 0.95rem;
+    color: #6b7280;
+    line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .ps-benefits-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .ps-problem-content {
+        padding: 1.5rem;
+    }
+
+    .ps-benefit-card {
+        padding: 1.5rem;
+    }
+}

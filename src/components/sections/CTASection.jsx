@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './Sections.css';
 
 const CTASection = () => {
@@ -8,7 +9,9 @@ const CTASection = () => {
           <p className="eyebrow">Let's Build</p>
           <h2>Ready to deploy intelligent agents for your business?</h2>
         </div>
-        <button className="primary-btn">Let's Talk</button>
+        <Link to="/contact">
+          <button className="primary-btn">Let's Talk</button>
+        </Link>
       </div>
     </section>
   );

@@ -41,23 +41,78 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-  <!-- Structured Data for SEO -->
+  <!-- Structured Data for SEO - Enhanced for Logo & Sitelinks -->
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Vraxlor",
-      "url": "https://vraxlor.com",
-      "logo": "https://vraxlor.com/logo.png",
-      "description": "Vraxlor builds intelligent AI agents, automation workflows, and data-driven solutions for modern businesses.",
-      "sameAs": [
-        "https://vraxlor.com"
-      ],
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "contactType": "Customer Service",
-        "url": "https://vraxlor.com/contact"
-      }
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://vraxlor.com/#organization",
+          "name": "Vraxlor",
+          "alternateName": "Vraxlor AI Solutions",
+          "url": "https://vraxlor.com",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://vraxlor.com/logo.png",
+            "width": 512,
+            "height": 512
+          },
+          "image": "https://vraxlor.com/logo.png",
+          "description": "Vraxlor builds intelligent AI agents, automation workflows, and data-driven solutions for modern businesses. Specializing in Agentic AI, Generative AI, Machine Learning, and AI Integration Services.",
+          "foundingDate": "2024",
+          "slogan": "AI Solutions & Intelligent Automation",
+          "sameAs": [
+            "https://twitter.com/vraxlor",
+            "https://linkedin.com/company/vraxlor"
+          ],
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "Customer Service",
+            "url": "https://vraxlor.com/contact",
+            "availableLanguage": ["English"]
+          },
+          "areaServed": "Worldwide",
+          "knowsAbout": [
+            "Artificial Intelligence",
+            "Machine Learning",
+            "AI Consulting",
+            "Generative AI",
+            "MLOps",
+            "Data Engineering"
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://vraxlor.com/#website",
+          "name": "Vraxlor",
+          "url": "https://vraxlor.com/",
+          "publisher": {
+            "@id": "https://vraxlor.com/#organization"
+          },
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": {
+              "@type": "EntryPoint",
+              "urlTemplate": "https://vraxlor.com/services?q={search_term_string}"
+            },
+            "query-input": "required name=search_term_string"
+          }
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://vraxlor.com/#webpage",
+          "url": "https://vraxlor.com/",
+          "name": "Vraxlor - AI Solutions & Intelligent Automation",
+          "isPartOf": {
+            "@id": "https://vraxlor.com/#website"
+          },
+          "about": {
+            "@id": "https://vraxlor.com/#organization"
+          },
+          "description": "Leading AI company offering AI Consulting, Generative AI, Machine Learning, MLOps, and AI Integration services."
+        }
+      ]
     }
     </script>
 </head>

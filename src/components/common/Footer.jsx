@@ -36,14 +36,14 @@ const Footer = () => {
           © {currentYear} {COMPANY_INFO.name}. All rights reserved.
         </span>
         <div className="socials">
-          <a href="#" aria-label="LinkedIn">
+          <a href="https://www.linkedin.com/company/vraxlorai/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
             LinkedIn
           </a>
-          <a href="#" aria-label="Twitter">
-            Twitter
+          <a href="https://x.com/vraxlor" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+            X (Twitter)
           </a>
-          <a href="#" aria-label="YouTube">
-            YouTube
+          <a href="https://www.instagram.com/vraxlor?igsh=MW54a2Rjc3lnd2tjYQ==" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            Instagram
           </a>
         </div>
       </div>
@@ -52,5 +52,4 @@ const Footer = () => {
 };
 
 export default Footer;
-
 

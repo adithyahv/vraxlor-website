@@ -1,0 +1,306 @@
+/* Generative AI Page Styles - Addepto-inspired Design */
+
+/* ===== Design Tokens ===== */
+.genai-page {
+    --genai-green: #37c95d;
+    --genai-green-hover: #2fb350;
+    --genai-dark: #0f1115;
+    --genai-dark-secondary: #1a1d23;
+    --genai-light: #f9fafb;
+    --genai-text: #374151;
+    --genai-text-light: #6b7280;
+    --genai-text-dark: #e5e7eb;
+    --genai-border: #e5e7eb;
+    --genai-sidebar-width: 280px;
+
+    font-family: 'Inter', 'Plus Jakarta Sans', -apple-system, sans-serif;
+    color: var(--genai-text);
+}
+
+/* ===== Hero Section ===== */
+.genai-hero {
+    background: linear-gradient(135deg, var(--genai-dark) 0%, #1a1d23 100%);
+    padding: 120px 2rem 80px;
+    text-align: center;
+}
+
+.genai-hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.genai-hero h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+}
+
+.genai-hero-subtitle {
+    font-size: 1.25rem;
+    color: var(--genai-text-dark);
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.genai-cta-btn {
+    background: var(--genai-green);
+    color: #fff;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.genai-cta-btn:hover {
+    background: var(--genai-green-hover);
+    transform: translateY(-2px);
+}
+
+/* ===== Main Layout ===== */
+.genai-main-layout {
+    display: flex;
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* ===== Sticky Sidebar ===== */
+.genai-sidebar {
+    width: var(--genai-sidebar-width);
+    flex-shrink: 0;
+    position: sticky;
+    top: 100px;
+    height: fit-content;
+    padding: 2rem;
+    border-right: 1px solid var(--genai-border);
+}
+
+.genai-sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.genai-sidebar-item {
+    background: none;
+    border: none;
+    text-align: left;
+    padding: 0.75rem 1rem;
+    font-size: 0.95rem;
+    color: var(--genai-text-light);
+    cursor: pointer;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+    border-left: 3px solid transparent;
+}
+
+.genai-sidebar-item:hover {
+    color: var(--genai-text);
+    background: rgba(55, 201, 93, 0.05);
+}
+
+.genai-sidebar-item.active {
+    color: var(--genai-green);
+    border-left-color: var(--genai-green);
+    background: rgba(55, 201, 93, 0.08);
+    font-weight: 500;
+}
+
+.genai-sidebar-cta {
+    margin-top: 2rem;
+    width: 100%;
+    background: var(--genai-green);
+    color: #fff;
+    border: none;
+    padding: 0.875rem 1.5rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.genai-sidebar-cta:hover {
+    background: var(--genai-green-hover);
+}
+
+/* ===== Content Area ===== */
+.genai-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.genai-section {
+    padding: 4rem 3rem;
+}
+
+.genai-section-dark {
+    background: var(--genai-dark);
+    color: #fff;
+}
+
+.genai-section-dark .genai-section-header h2 {
+    color: #fff;
+}
+
+.genai-section-dark .genai-section-header p {
+    color: var(--genai-text-dark);
+}
+
+.genai-section-light {
+    background: var(--genai-light);
+}
+
+.genai-section-header {
+    margin-bottom: 3rem;
+}
+
+.genai-section-header h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--genai-dark);
+    margin-bottom: 1rem;
+}
+
+.genai-section-header p {
+    font-size: 1.1rem;
+    color: var(--genai-text-light);
+}
+
+/* ===== Process Steps ===== */
+.genai-process-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.genai-process-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    background: var(--genai-dark-secondary);
+    border-radius: 12px;
+    border-left: 4px solid var(--genai-green);
+}
+
+.genai-step-number {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--genai-green);
+    min-width: 50px;
+}
+
+.genai-step-content h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 0.5rem;
+}
+
+.genai-step-content p {
+    font-size: 0.95rem;
+    color: var(--genai-text-dark);
+    line-height: 1.5;
+}
+
+/* ===== Technology Grid ===== */
+.genai-tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 1rem;
+}
+
+.genai-tech-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem;
+    background: #fff;
+    border: 1px solid var(--genai-border);
+    border-radius: 12px;
+    transition: all 0.2s ease;
+}
+
+.genai-tech-card:hover {
+    border-color: var(--genai-green);
+    box-shadow: 0 4px 12px rgba(55, 201, 93, 0.1);
+}
+
+.genai-tech-category {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--genai-green);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.5rem;
+}
+
+.genai-tech-name {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--genai-dark);
+}
+
+/* ===== Final CTA ===== */
+.genai-final-cta {
+    text-align: center;
+    padding: 5rem 3rem;
+    background: linear-gradient(135deg, var(--genai-dark) 0%, #1a1d23 100%);
+    color: #fff;
+}
+
+.genai-final-cta h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.genai-final-cta p {
+    font-size: 1.1rem;
+    color: var(--genai-text-dark);
+    margin-bottom: 2rem;
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 1024px) {
+    .genai-sidebar {
+        display: none;
+    }
+
+    .genai-section {
+        padding: 3rem 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .genai-hero {
+        padding: 100px 1.5rem 60px;
+    }
+
+    .genai-section {
+        padding: 2.5rem 1.5rem;
+    }
+
+    .genai-process-step {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .genai-tech-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .genai-final-cta {
+        padding: 3rem 1.5rem;
+    }
+
+    .genai-final-cta h2 {
+        font-size: 1.75rem;
+    }
+}

@@ -1,0 +1,183 @@
+/* Advisory Benefits Component Styles */
+
+.advisory-benefits {
+    width: 100%;
+}
+
+.ab-header h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #0f1115;
+    margin-bottom: 2.5rem;
+}
+
+.ab-layout {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+/* Tabs */
+.ab-tabs {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    position: sticky;
+    top: 120px;
+}
+
+.ab-tab {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.25rem;
+    background: none;
+    border: none;
+    text-align: left;
+    font-size: 0.95rem;
+    color: #6b7280;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    line-height: 1.4;
+}
+
+.ab-tab:hover {
+    background: rgba(55, 201, 93, 0.05);
+    color: #374151;
+}
+
+.ab-tab.active {
+    background: rgba(55, 201, 93, 0.1);
+    color: #37c95d;
+    font-weight: 500;
+}
+
+.ab-tab-indicator {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #e5e7eb;
+    flex-shrink: 0;
+    transition: all 0.2s ease;
+}
+
+.ab-tab.active .ab-tab-indicator {
+    background: #37c95d;
+    box-shadow: 0 0 0 4px rgba(55, 201, 93, 0.2);
+}
+
+/* Content Panel */
+.ab-content {
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    padding: 2.5rem;
+}
+
+.ab-content-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #0f1115;
+    margin-bottom: 1.5rem;
+    line-height: 1.3;
+}
+
+.ab-content-body {
+    color: #374151;
+    line-height: 1.7;
+}
+
+.ab-intro {
+    font-size: 1.05rem;
+    margin-bottom: 1.25rem;
+}
+
+.ab-details {
+    margin-bottom: 1.5rem;
+    color: #6b7280;
+}
+
+.ab-benefits-list {
+    background: #f9fafb;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.ab-benefits-list h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #37c95d;
+    margin-bottom: 1rem;
+}
+
+.ab-benefits-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.ab-benefits-list li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.75rem;
+    font-size: 0.95rem;
+}
+
+.ab-benefits-list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #37c95d;
+    font-weight: 600;
+}
+
+.ab-cta {
+    background: #37c95d;
+    color: #fff;
+    border: none;
+    padding: 0.875rem 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.ab-cta:hover {
+    background: #2fb350;
+    transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .ab-layout {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .ab-tabs {
+        position: static;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+
+    .ab-tab {
+        padding: 0.75rem 1rem;
+        font-size: 0.85rem;
+        flex: 1 1 calc(50% - 0.25rem);
+    }
+}
+
+@media (max-width: 640px) {
+    .ab-tab {
+        flex: 1 1 100%;
+    }
+
+    .ab-content {
+        padding: 1.5rem;
+    }
+}

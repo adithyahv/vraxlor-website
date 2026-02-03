@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import './ServicesSection.css';
 import aiStrategyImg from '../../assets/services/service_ai_strategy_office.jpg';
 import customAiImg from '../../assets/services/service_custom_ai_office.jpg';
@@ -124,7 +123,9 @@ const SERVICES = [
 ];
 
 const ServicesSection = () => {
-  const [openServiceId, setOpenServiceId] = useState(null);
+  const openHeaderServicesMenu = () => {
+    window.dispatchEvent(new CustomEvent('openServicesOverlay'));
+  };
 
   return (
     <section className="services-section" id="services">
@@ -141,40 +142,30 @@ const ServicesSection = () => {
         </div>
 
         <div className="services-grid">
-          {SERVICES.map((service) => {
-            const isOpen = openServiceId === service.id;
-
-            return (
-              <div key={service.id} className="service-card">
-                <div className="service-bg" style={{ backgroundImage: `url(${service.image})` }}></div>
-                <div className="service-content-wrapper">
-                  <h3 className="service-title">{service.title}</h3>
-                  <p className="service-oneliner">{service.oneLiner}</p>
-                  <div
-                    className={`service-includes ${isOpen ? 'is-open' : ''}`}
-                    id={`service-dropdown-${service.id}`}
-                    aria-hidden={!isOpen}
-                  >
-                    <p className="includes-label">Includes:</p>
-                    <ul className="includes-list">
-                      {service.includes.map((item, idx) => (
-                        <li key={idx}>{item}</li>
-                      ))}
-                    </ul>
-                  </div>
-                  <button
-                    type="button"
-                    className="service-card-cta"
-                    aria-expanded={isOpen}
-                    aria-controls={`service-dropdown-${service.id}`}
-                    onClick={() => setOpenServiceId(isOpen ? null : service.id)}
-                  >
-                    Learn More →
-                  </button>
+          {SERVICES.map((service) => (
+            <div key={service.id} className="service-card">
+              <div className="service-bg" style={{ backgroundImage: `url(${service.image})` }}></div>
+              <div className="service-content-wrapper">
+                <h3 className="service-title">{service.title}</h3>
+                <p className="service-oneliner">{service.oneLiner}</p>
+                <div className="service-includes">
+                  <p className="includes-label">Includes:</p>
+                  <ul className="includes-list">
+                    {service.includes.map((item, idx) => (
+                      <li key={idx}>{item}</li>
+                    ))}
+                  </ul>
                 </div>
+                <button
+                  type="button"
+                  className="service-card-cta"
+                  onClick={openHeaderServicesMenu}
+                >
+                  Learn More →
+                </button>
               </div>
-            );
-          })}
+            </div>
+          ))}
         </div>
       </div>
     </section>

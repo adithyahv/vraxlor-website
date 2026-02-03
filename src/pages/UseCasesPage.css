@@ -1,0 +1,434 @@
+/* Use Cases Page Styles - Addepto-inspired design */
+
+/* CSS Variables for consistency */
+.use-cases-page {
+    --uc-primary: #1d5bff;
+    --uc-primary-dark: #0040dd;
+    --uc-text-dark: #111827;
+    --uc-text-muted: #6b7280;
+    --uc-text-light: #374151;
+    --uc-bg-white: #ffffff;
+    --uc-bg-light: #f9fafb;
+    --uc-border: #e5e7eb;
+    --uc-shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    --uc-shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    --uc-radius: 12px;
+    --uc-transition: all 0.3s ease-in-out;
+
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: var(--uc-bg-white);
+}
+
+/* Container */
+.use-cases-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* Hero Section */
+.use-cases-hero {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    padding: 80px 24px;
+    text-align: center;
+}
+
+.use-cases-hero-content {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.use-cases-label {
+    display: inline-block;
+    padding: 8px 16px;
+    background: rgba(29, 91, 255, 0.15);
+    color: #60a5fa;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 20px;
+}
+
+.use-cases-hero h1 {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 20px;
+    line-height: 1.1;
+}
+
+.use-cases-hero p {
+    font-size: 1.125rem;
+    color: #94a3b8;
+    line-height: 1.7;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Filter Section */
+.use-cases-filter-section {
+    padding: 40px 24px 20px;
+    background: var(--uc-bg-white);
+    border-bottom: 1px solid var(--uc-border);
+    position: sticky;
+    top: 80px;
+    z-index: 10;
+}
+
+.use-cases-filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 16px;
+}
+
+.filter-pill {
+    padding: 10px 20px;
+    background: transparent;
+    border: 1px solid var(--uc-border);
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--uc-text-muted);
+    cursor: pointer;
+    transition: var(--uc-transition);
+    white-space: nowrap;
+}
+
+.filter-pill:hover {
+    border-color: var(--uc-primary);
+    color: var(--uc-primary);
+}
+
+.filter-pill.active {
+    background: var(--uc-primary);
+    border-color: var(--uc-primary);
+    color: #ffffff;
+}
+
+.results-count {
+    text-align: center;
+    font-size: 14px;
+    color: var(--uc-text-muted);
+    margin: 0;
+}
+
+/* Grid Section */
+.use-cases-grid-section {
+    padding: 60px 24px;
+    background: var(--uc-bg-light);
+    min-height: 600px;
+}
+
+.use-cases-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+}
+
+/* Card Component */
+.use-case-card {
+    background: var(--uc-bg-white);
+    border-radius: var(--uc-radius);
+    overflow: hidden;
+    box-shadow: var(--uc-shadow-sm);
+    transition: var(--uc-transition);
+    display: flex;
+    flex-direction: column;
+}
+
+.use-case-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--uc-shadow-lg);
+}
+
+/* Card Image */
+.use-case-card-image {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.use-case-card-icon {
+    font-size: 48px;
+    opacity: 0.9;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+    transition: transform 0.3s ease;
+}
+
+.use-case-card:hover .use-case-card-icon {
+    transform: scale(1.1);
+}
+
+/* Card Content */
+.use-case-card-content {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.use-case-card-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.use-case-category {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--uc-primary);
+}
+
+.use-case-date {
+    font-size: 13px;
+    color: var(--uc-text-muted);
+}
+
+.use-case-card-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--uc-text-dark);
+    line-height: 1.3;
+    margin: 0 0 12px 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.use-case-card-excerpt {
+    font-size: 15px;
+    color: var(--uc-text-light);
+    line-height: 1.6;
+    margin: 0 0 16px 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    flex: 1;
+}
+
+.use-case-card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.use-case-tag {
+    padding: 4px 10px;
+    background: var(--uc-bg-light);
+    border-radius: 4px;
+    font-size: 12px;
+    color: var(--uc-text-muted);
+    font-weight: 500;
+}
+
+.use-case-read-more {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: none;
+    border: none;
+    padding: 0;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--uc-primary);
+    cursor: pointer;
+    transition: var(--uc-transition);
+    margin-top: auto;
+}
+
+.use-case-read-more:hover {
+    color: var(--uc-primary-dark);
+    gap: 12px;
+}
+
+.use-case-read-more svg {
+    transition: transform 0.3s ease;
+}
+
+.use-case-read-more:hover svg {
+    transform: translateX(4px);
+}
+
+/* Empty State */
+.use-cases-empty {
+    text-align: center;
+    padding: 80px 20px;
+    color: var(--uc-text-muted);
+    font-size: 16px;
+}
+
+/* Pagination Section */
+.use-cases-pagination-section {
+    padding: 40px 24px;
+    background: var(--uc-bg-light);
+}
+
+.use-cases-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.pagination-btn {
+    min-width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--uc-bg-white);
+    border: 1px solid var(--uc-border);
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--uc-text-dark);
+    cursor: pointer;
+    transition: var(--uc-transition);
+}
+
+.pagination-btn:hover:not(:disabled) {
+    border-color: var(--uc-primary);
+    color: var(--uc-primary);
+}
+
+.pagination-btn.active {
+    background: var(--uc-primary);
+    border-color: var(--uc-primary);
+    color: #ffffff;
+}
+
+.pagination-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+/* CTA Section */
+.use-cases-cta-section {
+    padding: 80px 24px;
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+}
+
+.use-cases-cta {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.use-cases-cta h2 {
+    font-size: clamp(1.75rem, 3vw, 2.25rem);
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 16px;
+}
+
+.use-cases-cta p {
+    font-size: 1.125rem;
+    color: #94a3b8;
+    margin-bottom: 32px;
+}
+
+.use-cases-cta-btn {
+    display: inline-block;
+    padding: 16px 40px;
+    background: var(--uc-primary);
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 999px;
+    transition: var(--uc-transition);
+}
+
+.use-cases-cta-btn:hover {
+    background: var(--uc-primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(29, 91, 255, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .use-cases-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+    }
+
+    .use-cases-filter-section {
+        position: static;
+    }
+}
+
+@media (max-width: 768px) {
+    .use-cases-hero {
+        padding: 60px 20px;
+    }
+
+    .use-cases-filter-section {
+        padding: 24px 16px 16px;
+    }
+
+    .use-cases-filter-bar {
+        gap: 8px;
+    }
+
+    .filter-pill {
+        padding: 8px 14px;
+        font-size: 13px;
+    }
+
+    .use-cases-grid-section {
+        padding: 40px 16px;
+    }
+
+    .use-cases-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .use-case-card-title {
+        font-size: 16px;
+    }
+
+    .use-case-card-excerpt {
+        font-size: 14px;
+    }
+
+    .use-cases-cta-section {
+        padding: 60px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .use-cases-container {
+        padding: 0 16px;
+    }
+
+    .use-cases-hero h1 {
+        font-size: 2rem;
+    }
+
+    .use-cases-hero p {
+        font-size: 1rem;
+    }
+
+    .filter-pill {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+
+    .use-case-card-content {
+        padding: 20px;
+    }
+}

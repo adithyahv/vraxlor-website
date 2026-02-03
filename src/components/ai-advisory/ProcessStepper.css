@@ -1,0 +1,175 @@
+/* Process Stepper Styles */
+
+.process-stepper {
+    width: 100%;
+}
+
+.ps-header {
+    margin-bottom: 3rem;
+}
+
+.ps-eyebrow {
+    display: inline-block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #37c95d;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.75rem;
+}
+
+.ps-header h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #0f1115;
+    margin-bottom: 0.75rem;
+}
+
+.ps-header p {
+    font-size: 1.1rem;
+    color: #6b7280;
+}
+
+.ps-steps {
+    display: flex;
+    flex-direction: column;
+}
+
+.ps-step {
+    display: flex;
+    gap: 2rem;
+}
+
+.ps-step-marker {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.ps-step-number {
+    width: 80px;
+    padding: 0.5rem;
+    background: #0f1115;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.ps-step-number span {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #37c95d;
+    letter-spacing: 0.5px;
+}
+
+.ps-step-line {
+    flex: 1;
+    width: 2px;
+    background: linear-gradient(180deg, #37c95d 0%, #e5e7eb 100%);
+    min-height: 50px;
+    margin: 0.5rem 0;
+}
+
+.ps-step-content {
+    flex: 1;
+    padding-bottom: 3rem;
+}
+
+.ps-step:last-child .ps-step-content {
+    padding-bottom: 0;
+}
+
+.ps-step-content h3 {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: #0f1115;
+    margin-bottom: 1rem;
+}
+
+.ps-step-desc {
+    font-size: 1rem;
+    color: #374151;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+}
+
+.ps-step-activities {
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 1.25rem;
+    margin-bottom: 1.25rem;
+}
+
+.ps-step-activities h4 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #0f1115;
+    margin-bottom: 0.75rem;
+}
+
+.ps-step-activities ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.ps-step-activities li {
+    font-size: 0.9rem;
+    color: #6b7280;
+    position: relative;
+    padding-left: 1.25rem;
+}
+
+.ps-step-activities li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: #37c95d;
+    font-weight: 700;
+}
+
+.ps-step-outcome {
+    display: flex;
+    gap: 0.75rem;
+    padding: 1rem;
+    background: rgba(55, 201, 93, 0.08);
+    border-radius: 8px;
+    border-left: 4px solid #37c95d;
+}
+
+.ps-outcome-label {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #37c95d;
+    flex-shrink: 0;
+}
+
+.ps-outcome-text {
+    font-size: 0.9rem;
+    color: #374151;
+    font-style: italic;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .ps-step {
+        gap: 1.25rem;
+    }
+
+    .ps-step-number {
+        width: 70px;
+    }
+
+    .ps-step-activities ul {
+        grid-template-columns: 1fr;
+    }
+
+    .ps-step-outcome {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}

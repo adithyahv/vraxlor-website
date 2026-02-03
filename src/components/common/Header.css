@@ -121,6 +121,44 @@
   gap: 0.25rem;
 }
 
+.resources-toggle {
+  background: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.resources-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  min-width: 220px;
+  background: #ffffff;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 12px;
+  padding: 0.5rem;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.12);
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  z-index: 120;
+}
+
+.resources-menu-link {
+  padding: 0.6rem 0.9rem;
+  border-radius: 8px;
+  color: #1f2937;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.85rem;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.resources-menu-link:hover {
+  background: #f1f5f9;
+  color: #0f172a;
+}
 .chevron {
   font-size: 0.7rem;
   transition: transform 0.3s ease;
@@ -425,6 +463,37 @@
 
 .mobile-nav-links a:hover {
   color: #8b5cf6;
+}
+
+.mobile-resources-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.mobile-resources-label {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.mobile-resources-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.mobile-resources-links a {
+  color: #334155;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.mobile-resources-links a:hover {
+  color: #0f172a;
 }
 
 .mobile-cta-btn {

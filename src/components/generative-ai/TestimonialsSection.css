@@ -1,0 +1,141 @@
+/* Testimonials Section Styles */
+
+.testimonials-section {
+    width: 100%;
+}
+
+.ts-header h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #0f1115;
+    margin-bottom: 2.5rem;
+}
+
+.ts-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 4rem;
+}
+
+.ts-card {
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    padding: 2rem;
+    position: relative;
+    transition: all 0.2s ease;
+}
+
+.ts-card:hover {
+    border-color: #37c95d;
+    box-shadow: 0 8px 24px rgba(55, 201, 93, 0.1);
+}
+
+.ts-quote-icon {
+    font-size: 4rem;
+    font-weight: 700;
+    color: #37c95d;
+    line-height: 1;
+    opacity: 0.3;
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+}
+
+.ts-quote {
+    font-size: 1rem;
+    color: #374151;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    font-style: italic;
+}
+
+.ts-author {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.ts-author-avatar {
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, #37c95d 0%, #2fb350 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: 600;
+    font-size: 1.25rem;
+}
+
+.ts-author-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.ts-author-name {
+    font-weight: 600;
+    color: #0f1115;
+    font-size: 0.95rem;
+}
+
+.ts-author-role {
+    font-size: 0.85rem;
+    color: #6b7280;
+}
+
+/* Client Logos */
+.ts-clients {
+    text-align: center;
+    padding-top: 3rem;
+    border-top: 1px solid #e5e7eb;
+}
+
+.ts-clients-label {
+    font-size: 0.9rem;
+    color: #6b7280;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 2rem;
+}
+
+.ts-logos-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.ts-logo-item {
+    padding: 1rem 2rem;
+    background: #f9fafb;
+    border-radius: 8px;
+    font-weight: 600;
+    color: #6b7280;
+    font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .ts-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .ts-card {
+        padding: 1.5rem;
+    }
+
+    .ts-logos-grid {
+        gap: 1rem;
+    }
+
+    .ts-logo-item {
+        padding: 0.75rem 1.25rem;
+        font-size: 0.85rem;
+    }
+}

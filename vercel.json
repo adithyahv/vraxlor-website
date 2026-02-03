@@ -1,7 +1,86 @@
 {
+  "framework": null,
   "buildCommand": "npm run build",
+  "outputDirectory": "dist",
   "cleanUrls": true,
   "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/services/generative-ai",
+      "destination": "/services/generative-ai-consulting",
+      "permanent": true
+    },
+    {
+      "source": "/services/ml-consulting",
+      "destination": "/services/machine-learning",
+      "permanent": true
+    },
+    {
+      "source": "/services/ai-agents-development",
+      "destination": "/services/ai-agents",
+      "permanent": true
+    },
+    {
+      "source": "/services/ai",
+      "destination": "/services/ai-consulting",
+      "permanent": true
+    },
+    {
+      "source": "/services/big-data",
+      "destination": "/services/big-data-consulting",
+      "permanent": true
+    },
+    {
+      "source": "/services/bi",
+      "destination": "/services/business-intelligence",
+      "permanent": true
+    },
+    {
+      "source": "/services/databricks",
+      "destination": "/services/databricks-consulting",
+      "permanent": true
+    },
+    {
+      "source": "/ai-consulting",
+      "destination": "/services/ai-consulting",
+      "permanent": true
+    },
+    {
+      "source": "/machine-learning",
+      "destination": "/services/machine-learning",
+      "permanent": true
+    },
+    {
+      "source": "/generative-ai",
+      "destination": "/services/generative-ai-consulting",
+      "permanent": true
+    },
+    {
+      "source": "/mlops",
+      "destination": "/services/mlops",
+      "permanent": true
+    },
+    {
+      "source": "/data-engineering",
+      "destination": "/services/data-engineering",
+      "permanent": true
+    },
+    {
+      "source": "/home",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/index.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/index",
+      "destination": "/",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
       "source": "/(.*)",

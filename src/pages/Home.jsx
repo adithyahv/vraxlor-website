@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Header from '../components/common/Header';
 import { COMPANY_INFO } from '../constants/data';
 import FounderQuoteSection from '../components/sections/FounderQuoteSection';
@@ -51,7 +52,7 @@ const Home = () => {
               We build cloud systems, migrate data, develop websites, run SEO & Google Ads, and engineer next-generation AI — including ML models, computer vision, and advanced LLM agents.
             </p>
             <div className="hero-cta">
-              <button className="primary-btn">Let&apos;s Talk</button>
+              <Link to="/contact" className="primary-btn">Let&apos;s Talk</Link>
               <span>Partnering with visionary teams worldwide</span>
             </div>
           </div>

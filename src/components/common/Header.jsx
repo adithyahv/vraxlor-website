@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { NAV_LINKS, SERVICE_LIFECYCLE, SERVICES } from '../../constants/data';
 import logoImage from '../../assets/images/logo.png';
@@ -7,6 +7,13 @@ import './Header.css';
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [servicesMenuOpen, setServicesMenuOpen] = useState(false);
+  const [resourcesMenuOpen, setResourcesMenuOpen] = useState(false);
+
+  const resourcesLinks = [
+    { label: 'Blogs', href: '/resources/blogs' },
+    { label: 'Guides & Ebooks', href: '/resources/guides' },
+    { label: 'Careers', href: '/resources/careers' },
+  ];
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
@@ -18,11 +25,28 @@ const Header = () => {
 
   const toggleServicesMenu = () => {
     setServicesMenuOpen(!servicesMenuOpen);
+    setResourcesMenuOpen(false);
   };
 
   const closeServicesMenu = () => {
     setServicesMenuOpen(false);
   };
+
+  const toggleResourcesMenu = () => {
+    setResourcesMenuOpen(!resourcesMenuOpen);
+    setServicesMenuOpen(false);
+  };
+
+  const closeResourcesMenu = () => {
+    setResourcesMenuOpen(false);
+  };
+
+  // Allow other components (e.g., Services cards) to open the services overlay
+  useEffect(() => {
+    const handler = () => setServicesMenuOpen(true);
+    window.addEventListener('openServicesOverlay', handler);
+    return () => window.removeEventListener('openServicesOverlay', handler);
+  }, []);
 
   return (
     <>
@@ -47,6 +71,34 @@ const Header = () => {
                     {link.label}
                     <span className={`chevron ${servicesMenuOpen ? 'open' : ''}`}>▾</span>
                   </button>
+                );
+              }
+              if (link.label === 'Resources') {
+                return (
+                  <div key={link.label} className="nav-item-dropdown">
+                    <button
+                      className="nav-link-item resources-toggle"
+                      onClick={toggleResourcesMenu}
+                      aria-expanded={resourcesMenuOpen}
+                    >
+                      {link.label}
+                      <span className={`chevron ${resourcesMenuOpen ? 'open' : ''}`}>▾</span>
+                    </button>
+                    {resourcesMenuOpen && (
+                      <div className="resources-menu">
+                        {resourcesLinks.map((item) => (
+                          <Link
+                            key={item.label}
+                            to={item.href}
+                            className="resources-menu-link"
+                            onClick={closeResourcesMenu}
+                          >
+                            {item.label}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                  </div>
                 );
               }
               return (
@@ -91,6 +143,27 @@ const Header = () => {
                     >
                       {link.label}
                     </button>
+                  );
+                }
+                if (link.label === 'Resources') {
+                  return (
+                    <div key={link.label} className="mobile-resources-group">
+                      <span className="mobile-resources-label">{link.label}</span>
+                      <div className="mobile-resources-links">
+                        {resourcesLinks.map((item) => (
+                          <Link
+                            key={item.label}
+                            to={item.href}
+                            onClick={() => {
+                              closeMobileMenu();
+                              closeResourcesMenu();
+                            }}
+                          >
+                            {item.label}
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
                   );
                 }
                 return (

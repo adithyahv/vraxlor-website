@@ -1,0 +1,338 @@
+/* Business Benefits Component Styles */
+
+.business-benefits {
+    width: 100%;
+}
+
+.bb-header h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #0f1115;
+    margin-bottom: 2.5rem;
+}
+
+.bb-layout {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+/* Tabs */
+.bb-tabs {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    position: sticky;
+    top: 120px;
+}
+
+.bb-tab {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.25rem;
+    background: none;
+    border: none;
+    text-align: left;
+    font-size: 0.95rem;
+    color: #6b7280;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    line-height: 1.4;
+}
+
+.bb-tab:hover {
+    background: rgba(55, 201, 93, 0.05);
+    color: #374151;
+}
+
+.bb-tab.active {
+    background: rgba(55, 201, 93, 0.1);
+    color: #37c95d;
+    font-weight: 500;
+}
+
+.bb-tab-indicator {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #e5e7eb;
+    flex-shrink: 0;
+    transition: all 0.2s ease;
+}
+
+.bb-tab.active .bb-tab-indicator {
+    background: #37c95d;
+    box-shadow: 0 0 0 4px rgba(55, 201, 93, 0.2);
+}
+
+/* Content Panel */
+.bb-content {
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    padding: 2.5rem;
+}
+
+.bb-content-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #0f1115;
+    margin-bottom: 1.5rem;
+    line-height: 1.3;
+}
+
+.bb-content-body {
+    color: #374151;
+    line-height: 1.7;
+}
+
+.bb-intro {
+    font-size: 1.05rem;
+    margin-bottom: 1.5rem;
+}
+
+.bb-details {
+    margin-bottom: 1.5rem;
+}
+
+.bb-subtitle {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #0f1115;
+    margin: 1.5rem 0 1rem;
+}
+
+.bb-list {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+}
+
+.bb-list li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.bb-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.5rem;
+    width: 6px;
+    height: 6px;
+    background: #37c95d;
+    border-radius: 50%;
+}
+
+.bb-list li strong {
+    color: #0f1115;
+}
+
+/* Criteria Sections */
+.bb-criteria-section {
+    margin: 1.5rem 0;
+    padding: 1.5rem;
+    background: #f9fafb;
+    border-radius: 12px;
+}
+
+.bb-criteria-section h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #37c95d;
+    margin-bottom: 1rem;
+}
+
+.bb-criteria-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.bb-criteria-section li {
+    position: relative;
+    padding-left: 1.25rem;
+    margin-bottom: 0.75rem;
+    font-size: 0.95rem;
+}
+
+.bb-criteria-section li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #37c95d;
+    font-weight: 600;
+}
+
+/* Phases */
+.bb-phases {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.bb-phase-card {
+    background: #f9fafb;
+    border-radius: 12px;
+    padding: 1.5rem;
+    border-left: 4px solid #37c95d;
+}
+
+.bb-phase-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.bb-phase-header h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #0f1115;
+    margin: 0;
+}
+
+.bb-phase-timeline {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #37c95d;
+    background: rgba(55, 201, 93, 0.1);
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+}
+
+.bb-phase-card ul {
+    list-style: disc;
+    padding-left: 1.25rem;
+    margin: 0;
+}
+
+.bb-phase-card li {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Benefits List */
+.bb-benefits-list {
+    margin: 1.5rem 0;
+}
+
+.bb-benefits-list h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #0f1115;
+    margin-bottom: 1rem;
+}
+
+.bb-benefits-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+.bb-benefits-list li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.bb-benefits-list li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: #37c95d;
+    font-weight: 600;
+}
+
+/* Highlights */
+.bb-highlights {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+}
+
+.bb-highlights li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    background: #f9fafb;
+    border-radius: 8px;
+}
+
+.bb-highlights li::before {
+    content: '✓';
+    color: #37c95d;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.bb-conclusion {
+    font-style: italic;
+    color: #6b7280;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #e5e7eb;
+}
+
+.bb-cta {
+    margin-top: 2rem;
+    background: #37c95d;
+    color: #fff;
+    border: none;
+    padding: 0.875rem 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.bb-cta:hover {
+    background: #2fb350;
+    transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .bb-layout {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .bb-tabs {
+        position: static;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+
+    .bb-tab {
+        padding: 0.75rem 1rem;
+        font-size: 0.85rem;
+        flex: 1 1 calc(50% - 0.25rem);
+    }
+
+    .bb-phases {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 640px) {
+    .bb-tab {
+        flex: 1 1 100%;
+    }
+
+    .bb-content {
+        padding: 1.5rem;
+    }
+
+    .bb-content-title {
+        font-size: 1.25rem;
+    }
+}
