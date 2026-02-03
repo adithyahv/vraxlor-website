@@ -1,7 +1,7 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { SERVICES } from '../constants/data';
-import ServiceDetail from '../components/ServiceDetail';
+import { SERVICES } from '../../constants/data';
+import ServiceDetail from './ServiceDetail';
 import './ServicePageTemplate.css';
 
 const ServicePageTemplate = () => {

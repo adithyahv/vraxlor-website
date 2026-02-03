@@ -5,9 +5,9 @@ import {
   Mail, Phone, Brain, TestTube, Database, Factory, Gem, FlaskConical,
   ArrowRight, Quote, CheckCircle, AlertCircle, Briefcase, BarChart3, Layers
 } from 'lucide-react';
-import { COMPANY_INFO, SERVICES, USE_CASES } from '../constants/data';
-import prashanhImage from '../assets/images/team/prashanh-vr.jpg';
-import FloatingLines from '../components/common/FloatingLines';
+import { COMPANY_INFO, SERVICES, USE_CASES } from '../../constants/data';
+import prashanhImage from '../../assets/images/team/prashanh-vr.jpg';
+import FloatingLines from '../../components/ui/common/FloatingLines';
 import './Contact.css';
 
 // Icon mapping for services

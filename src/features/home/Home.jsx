@@ -1,16 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Header from '../components/common/Header';
-import { COMPANY_INFO } from '../constants/data';
-import FounderQuoteSection from '../components/sections/FounderQuoteSection';
-import StatsSection from '../components/sections/StatsSection';
-import ServicesSection from '../components/sections/ServicesSection';
-import ApproachTimeline from '../components/sections/ApproachTimeline';
-import PartnersSection from '../components/sections/PartnersSection';
-import IndustriesSection from '../components/sections/IndustriesSection';
-import WhyVroxlarSection from '../components/sections/WhyVroxlarSection';
+import Header from '../../components/ui/common/Header';
+import { COMPANY_INFO } from '../../constants/data';
+import FounderQuoteSection from '../../components/sections/FounderQuoteSection';
+import StatsSection from '../../components/sections/StatsSection';
+import ServicesSection from '../../components/sections/ServicesSection';
+import ApproachTimeline from '../../components/sections/ApproachTimeline';
+import PartnersSection from '../../components/sections/PartnersSection';
+import IndustriesSection from '../../components/sections/IndustriesSection';
+import WhyVroxlarSection from '../../components/sections/WhyVroxlarSection';
 import './Home.css';
-import GridMotion from '../components/common/GridMotion';
+import GridMotion from '../../components/ui/common/GridMotion';
 
 const Home = () => {
   return (

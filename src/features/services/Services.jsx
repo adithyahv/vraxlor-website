@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
-import { SERVICES, SERVICE_LIFECYCLE } from '../constants/data';
-import BackgroundBeams from '../components/common/BackgroundBeams';
+import { SERVICES, SERVICE_LIFECYCLE } from '../../constants/data';
+import BackgroundBeams from '../../components/ui/common/BackgroundBeams';
 
 import './Services.css';
 

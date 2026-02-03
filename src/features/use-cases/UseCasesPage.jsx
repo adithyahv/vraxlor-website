@@ -1,6 +1,6 @@
 import { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
-import { USE_CASES, USE_CASE_CATEGORIES } from '../constants/use-cases-data';
+import { USE_CASES, USE_CASE_CATEGORIES } from '../../constants/use-cases-data';
 import './UseCasesPage.css';
 
 const ITEMS_PER_PAGE = 9;

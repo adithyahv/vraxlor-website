@@ -1,19 +1,19 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Layout from './components/Layout';
-import Home from './pages/Home';
-import Services from './pages/Services';
-import Industries from './pages/Industries';
-import UseCasesPage from './pages/UseCasesPage';
-import UseCaseDetailPage from './pages/UseCaseDetailPage';
-import CaseStudies from './pages/CaseStudies';
-import About from './pages/About';
-import Contact from './pages/Contact';
-import ServicePageTemplate from './pages/ServicePageTemplate';
-import GenerativeAIPage from './pages/GenerativeAIPage';
-import AIAdvisoryPage from './pages/AIAdvisoryPage';
-import ResourcesBlog from './pages/ResourcesBlog';
-import ResourcesGuides from './pages/ResourcesGuides';
-import ResourcesCareers from './pages/ResourcesCareers';
+import Layout from '../components/layout/Layout';
+import Home from '../features/home/Home';
+import Services from '../features/services/Services';
+import Industries from '../features/industries/Industries';
+import UseCasesPage from '../features/use-cases/UseCasesPage';
+import UseCaseDetailPage from '../features/use-cases/UseCaseDetailPage';
+import CaseStudies from '../features/case-studies/CaseStudies';
+import About from '../features/about/About';
+import Contact from '../features/contact/Contact';
+import ServicePageTemplate from '../features/services/ServicePageTemplate';
+import GenerativeAIPage from '../features/services/generative-ai/GenerativeAIPage';
+import AIAdvisoryPage from '../features/services/ai-advisory/AIAdvisoryPage';
+import ResourcesBlog from '../features/resources/ResourcesBlog';
+import ResourcesGuides from '../features/resources/ResourcesGuides';
+import ResourcesCareers from '../features/resources/ResourcesCareers';
 import './App.css';
 
 function App() {

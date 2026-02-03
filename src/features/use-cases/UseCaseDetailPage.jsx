@@ -1,6 +1,6 @@
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { useEffect, useState, useRef } from 'react';
-import { USE_CASES } from '../constants/use-cases-data';
+import { USE_CASES } from '../../constants/use-cases-data';
 import './UseCaseDetailPage.css';
 
 // Image mapping for use cases

@@ -1,4 +1,4 @@
-import { INDUSTRIES } from '../constants/data';
+import { INDUSTRIES } from '../../constants/data';
 import './Industries.css';
 
 const Industries = () => {

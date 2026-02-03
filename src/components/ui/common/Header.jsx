@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { NAV_LINKS, SERVICE_LIFECYCLE, SERVICES } from '../../constants/data';
-import logoImage from '../../assets/images/logo.png';
+import { NAV_LINKS, SERVICE_LIFECYCLE, SERVICES } from '../../../constants/data';
+import logoImage from '../../../assets/images/logo.png';
 import './Header.css';
 
 const Header = () => {

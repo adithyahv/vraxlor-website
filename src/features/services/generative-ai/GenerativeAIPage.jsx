@@ -1,9 +1,9 @@
 import { useState, useEffect, useRef } from 'react';
-import BusinessBenefits from '../components/generative-ai/BusinessBenefits';
-import IndustryExpertise from '../components/generative-ai/IndustryExpertise';
-import TestimonialsSection from '../components/generative-ai/TestimonialsSection';
-import FAQAccordion from '../components/generative-ai/FAQAccordion';
-import KeyBenefits from '../components/generative-ai/KeyBenefits';
+import BusinessBenefits from './components/BusinessBenefits';
+import IndustryExpertise from './components/IndustryExpertise';
+import TestimonialsSection from './components/TestimonialsSection';
+import FAQAccordion from './components/FAQAccordion';
+import KeyBenefits from './components/KeyBenefits';
 import './GenerativeAIPage.css';
 
 const SIDEBAR_ITEMS = [

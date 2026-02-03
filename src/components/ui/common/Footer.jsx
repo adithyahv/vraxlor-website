@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
-import { FOOTER_LINKS, COMPANY_INFO } from '../../constants/data';
-import logoImage from '../../assets/images/logo.png';
+import { FOOTER_LINKS, COMPANY_INFO } from '../../../constants/data';
+import logoImage from '../../../assets/images/logo.png';
 import './Footer.css';
 
 const Footer = () => {

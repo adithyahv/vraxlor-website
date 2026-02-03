@@ -1,4 +1,4 @@
-import { DIFFERENTIATORS, STATS, ENTERPRISE_APPROACH } from '../constants/data';
+import { DIFFERENTIATORS, STATS, ENTERPRISE_APPROACH } from '../../constants/data';
 import './About.css';
 
 const About = () => {

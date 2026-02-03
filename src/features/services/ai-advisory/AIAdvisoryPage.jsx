@@ -1,8 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
-import AdvisoryBenefits from '../components/ai-advisory/AdvisoryBenefits';
-import ProcessStepper from '../components/ai-advisory/ProcessStepper';
-import AdvisoryIndustries from '../components/ai-advisory/AdvisoryIndustries';
-import ProblemSolution from '../components/ai-advisory/ProblemSolution';
+import AdvisoryBenefits from './components/AdvisoryBenefits';
+import ProcessStepper from './components/ProcessStepper';
+import AdvisoryIndustries from './components/AdvisoryIndustries';
+import ProblemSolution from './components/ProblemSolution';
 import './AIAdvisoryPage.css';
 
 const SIDEBAR_ITEMS = [
