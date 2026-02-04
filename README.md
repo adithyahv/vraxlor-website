@@ -183,7 +183,7 @@ Private - All Rights Reserved
 
 ## 👥 Team
 
-Developed by Vroxlar
+Developed by Vraxlor
 
 ---
 
